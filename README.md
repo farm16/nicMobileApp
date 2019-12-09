@@ -1,2 +1,2 @@
 # nicMobileApp
-![alt text](./app.pdf)
+![alt text](./nccApp.pdf)
