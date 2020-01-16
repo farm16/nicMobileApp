@@ -22,12 +22,13 @@ console.log('api link => ' + config.API_URL);
 class Login extends React.Component {
   componentDidMount() {
     // Add event listener to handle OAuthLogin:// URLs
-    if (this.props.auth.isAuthenticated)
+    if (this.props.auth.isAuthenticated) {
       Linking.removeEventListener('url', this.handleOpenURL);
-
+      this.props.navigation.navigate('App');
+    }
     Linking.addEventListener('url', this.handleOpenURL);
     // Launched from an external URL
-    Linking.getInitialURL().then((url) => {
+    Linking.getInitialURL().then(url => {
       if (url) {
         this.handleOpenURL({ url });
       }
@@ -37,7 +38,7 @@ class Login extends React.Component {
     // Remove event listener
     Linking.removeEventListener('url', this.handleOpenURL);
   }
-  setUser = (data) => this.props.loginEmail(data);
+  setUser = data => this.props.loginEmail(data);
   handleOpenURL = async ({ url }) => {
     // Extract stringified user string out of the URL
     const [, user_string] = url.match(/user=([^#]+)/);
@@ -61,7 +62,7 @@ class Login extends React.Component {
     this.openURL('https://c-fajardo.com/api/nicapp/auth/google');
   };
 
-  openURL = (url) => {
+  openURL = url => {
     // Open URL in a browser - Use SafariView on iOS
     if (Platform.OS === 'ios') {
       SafariView.show({
@@ -82,8 +83,7 @@ class Login extends React.Component {
     return (
       <ImageBackground
         source={require('../assets/background.jpg')}
-        style={styles.backgroundImage}
-      >
+        style={styles.backgroundImage}>
         <View style={styles.containerDiv}>
           <View style={styles.titleDiv}>
             <Text style={styles.titleText}>NORTH</Text>
@@ -157,11 +157,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return bindActionCreators({ loginEmail, registerGoogle }, dispatch);
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   auth: state.auth,
   error: state.error
 });

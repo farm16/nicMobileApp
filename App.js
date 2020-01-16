@@ -6,7 +6,7 @@ console.log(config.ANALYTICS_KEY);
 
 // import {AsyncStorage, ActivityIndicator, StyleSheet, View} from "react-native";
 
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './Redux/store/store';
 import AppNavigation from './Navigation/AppNavigation';
 
