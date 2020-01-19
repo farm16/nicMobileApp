@@ -1,12 +1,4 @@
 import React from 'react';
-// import {
-//   AsyncStorage,
-//   StyleSheet,
-//   Text,
-//   SafeAreaView,
-//   StatusBar,
-//   Platform
-// } from "react-native";
 import { connect } from 'react-redux';
 // import { loginEmail, registerGoogle } from '../Redux/actions/actions';
 // import { bindActionCreators } from 'redux';

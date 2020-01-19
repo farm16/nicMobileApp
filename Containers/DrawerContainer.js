@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { logoutUser } from '../Redux/actions/actions';
-import { bindActionCreators } from 'redux';
 import {
   SafeAreaView,
   StyleSheet,
@@ -25,7 +23,7 @@ import { Button, Text } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HeaderNav from './HeaderNav';
 
-// import AppDrawerNavigator from "./Containers/DrawerContainer";
+// import Logout from './Logout';
 
 // _signOutAsync = async () => {
 //   await AsyncStorage.clear();
@@ -71,7 +69,6 @@ const CustomDrawerComponent = props => {
     </SafeAreaView>
   );
 };
-// <Text onPress={props.logoutUser} style={styles.btnText}>Log Out</Text>
 
 // class LogOut extends React.Component {
 //   static navigationOptions = {

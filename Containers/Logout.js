@@ -42,7 +42,6 @@ class Logout extends React.Component {
     // );
     console.log('pressed LOG-OUT BUTTON');
     this.props.logoutUser();
-
     this.props.navigation.navigate('Auth');
   };
   render() {

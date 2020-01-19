@@ -1,9 +1,10 @@
 import ActionTypes from './ActionTypes';
-import jwt_decode from 'jwt-decode';
 import axios from 'axios';
-import setAuthToken from './setAuthToken';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-import { AsyncStorage } from 'react-native';
+/* import { AsyncStorage } from 'react-native';
+import setAuthToken from './setAuthToken';
+import jwt_decode from 'jwt-decode';
+*/
 
 //send form
 export const sendForm = data => dispatch => {
@@ -11,7 +12,7 @@ export const sendForm = data => dispatch => {
     .post(`${API_URL}/api/users/email/register`, userData)
     .then(res => history.push('/login')) //will change in future
     .catch(err => {
-      //console.log(err);
+      console.log(err);
       dispatch({
         type: ActionTypes.GET_ERRORS,
         payload: err.response.data,
@@ -27,7 +28,6 @@ export const loginEmail = response => dispatch => {
   dispatch(setCurrentUser(response));
 };
 
-//
 export const setCurrentUser = decoded => {
   return {
     type: ActionTypes.SET_CURRENT_USER,
@@ -42,6 +42,4 @@ export const logoutUser = () => dispatch => {
     type: ActionTypes.SET_CURRENT_USER,
     payload: {},
   });
-  // Remove token from local storage jwtToken
-  // navigation.navigate('Auth');
 };

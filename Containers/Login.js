@@ -13,10 +13,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import SafariView from 'react-native-safari-view';
-
 import config from '../config';
 //console.log('api link => ' + config.API_URL);
 
+console.log("Using API's URL => " + config.API_URL);
 // this.openURL('http://192.168.1.2:3001/api/nicapp/auth/google');
 
 class Login extends React.Component {
@@ -64,13 +64,15 @@ class Login extends React.Component {
   //     Linking.openURL(url);
   //   }
   // };
-  render() {
-    // const { user } = this.props.auth;
-    console.log(
-      'props fromo LOGIN PAGE ' + this.props.auth.isAuthenticated,
-    );
+  // render() {
+  //   // const { user } = this.props.auth;
+  //   console.log(
+  //     'props fromo LOGIN PAGE ' + this.props.auth.isAuthenticated,
+  //   );
 
-    // this.props.auth.isAuthenticated ? this.props.navigation.navigate('Home') : this.props.navigation.navigate('Auth')
+  render() {
+    const { user } = this.props.auth;
+    console.log('from LOGIN-PAGE ' + this.props.auth.isAuthenticated);
     return (
       <ImageBackground
         source={require('../assets/background.jpg')}
@@ -85,13 +87,16 @@ class Login extends React.Component {
           <TouchableOpacity
             style={styles.btnGmail}
             onPress={this.loginWithGoogle}
-            // onPress={() => this.props.loginEmail(this.props.navigation)}
           >
             <Text style={styles.btnText}>Log in with Gmail</Text>
           </TouchableOpacity>
           {/* <TouchableOpacity style={styles.btnGuess} onPress={this._signInAsync}>
             <Text style={styles.btnText}>Log in as a Guess</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>    
+          
+          <Text style={styles.rocketDevs}>
+            Powered by RocketDevs.com{' '}
+          </Text> */}
         </View>
       </ImageBackground>
     );
@@ -152,10 +157,8 @@ const styles = StyleSheet.create({
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ loginEmail, registerGoogle }, dispatch);
 };
-
 const mapStateToProps = state => ({
   auth: state.auth,
   error: state.error,
 });
-
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
