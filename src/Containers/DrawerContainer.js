@@ -5,34 +5,19 @@ import {
   StyleSheet,
   View,
   ScrollView,
-  TouchableOpacity,
-  AsyncStorage,
 } from 'react-native';
-import { H1, Container, Content, Icon as Icon2 } from 'native-base';
 import {
   createDrawerNavigator,
   DrawerItems,
 } from 'react-navigation-drawer';
-import { StackActions, NavigationActions } from 'react-navigation';
 
 import HomeScreen from './HomeScreen';
 import Form1 from './Form1';
 import Colors from '../assets/Colors';
 import Logout from './Logout';
-import { Button, Text } from 'native-base';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import HeaderNav from './HeaderNav';
+import { Text } from 'native-base';
 
-// import Logout from './Logout';
-
-// _signOutAsync = async () => {
-//   await AsyncStorage.clear();
-//   this.props.navigation.navigate("Auth");
-// };
-//${props.auth ? props.auth.user.name.split(" ")[0] : ""}`}
 const CustomDrawerComponent = props => {
-  // console.log("from drawer=> " + JSON.stringify(props.auth))
-  // !props.auth.isAuthenticated ? props.navigation.navigate('Auth') : null
   return (
     <SafeAreaView
       style={{
@@ -70,68 +55,10 @@ const CustomDrawerComponent = props => {
   );
 };
 
-// class LogOut extends React.Component {
-//   static navigationOptions = {
-//     drawerLabel: () => (
-//       <Text
-//         style={{ color: '#fff', fontSize: 20, marginVertical: 20 }}
-//       >
-//         Log Out
-//       </Text>
-//     ),
-//     drawerIcon: () => (
-//       <Icon
-//         style={{
-//           color: 'white',
-//           fontSize: 25,
-//         }}
-//         name="arrow-circle-left"
-//       />
-//     ),
-//   };
-
-//   logoutNow = () => {
-//     //async await AsyncStorage.clear();
-//     this.props.logoutUser();
-//     this.props.navigation.navigate('AuthLoading');
-//   };
-//   render() {
-//     const open = () => this.props.navigation.openDrawer();
-//     return (
-//       <Container>
-//         <HeaderNav open={open} navTitle={'Home'} />
-//         <View style={styles.content}>
-//           <Text style={styles.header}>
-//             Are you sure you wan to log out?
-//           </Text>
-//           <TouchableOpacity
-//             style={styles.btn}
-//             onPress={this.logoutNow}
-//             // onPress={() => this.props.loginEmail(this.props.navigation)}
-//           >
-//             <Text style={styles.btnText}>Yes</Text>
-//           </TouchableOpacity>
-//           <TouchableOpacity
-//             style={styles.btn}
-//             onPress={() => {
-//               this.props.navigation.navigate('Home');
-//             }}
-//             // onPress={() => this.props.loginEmail(this.props.navigation)}
-//           >
-//             <Text style={styles.btnText}>No</Text>
-//           </TouchableOpacity>
-//         </View>
-//       </Container>
-//     );
-//   }
-// }
-
 const mapStateToProps = state => ({
   auth: state.auth,
   error: state.error,
 });
-
-// const Logout = connect(mapStateToProps, { logoutUser })(LogOut);
 const Drawer = connect(mapStateToProps)(CustomDrawerComponent);
 
 export default AppDrawerNavigator = createDrawerNavigator(

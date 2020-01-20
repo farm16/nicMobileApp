@@ -21,9 +21,6 @@ export const sendForm = data => dispatch => {
 };
 //login user
 export const loginEmail = response => dispatch => {
-  // await AsyncStorage.setItem('jwtToken', response);
-  // setAuthToken(token);
-  // navigation.navigate('App');
   console.log(`from actionsJS ${JSON.stringify(response)}`);
   dispatch(setCurrentUser(response));
 };

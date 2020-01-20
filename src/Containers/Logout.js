@@ -1,12 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../Redux/actions/actions';
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  AsyncStorage,
-} from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Container } from 'native-base';
 import Colors from '../assets/Colors';
 import { Text } from 'native-base';
@@ -37,9 +32,6 @@ class Logout extends React.Component {
   };
 
   logoutNow = () => {
-    //async => await AsyncStorage.removeItem('jwtToken', () =>
-    //
-    // );
     console.log('pressed LOG-OUT BUTTON');
     this.props.logoutUser();
     this.props.navigation.navigate('Auth');

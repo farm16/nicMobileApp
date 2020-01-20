@@ -5,29 +5,19 @@ import { bindActionCreators } from 'redux';
 import {
   StyleSheet,
   ImageBackground,
-  AsyncStorage,
   Text,
   View,
   Linking,
-  Platform,
   TouchableOpacity,
 } from 'react-native';
-import SafariView from 'react-native-safari-view';
-import config from '../config';
-//console.log('api link => ' + config.API_URL);
-
-console.log("Using API's URL => " + config.API_URL);
+// import config from '../../config';
+// console.log("Using API's URL => " + config.API_URL);
 // this.openURL('http://192.168.1.2:3001/api/nicapp/auth/google');
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
-    // this._bootstrapAsync();
   }
-  // componentDidMount() {
-  //   if (this.props.auth.isAuthenticated)
-  //     this.props.navigation.navigate('App');
-  // }
   loginWithGoogle = async () => {
     let url = 'https://c-fajardo.com/api/nicapp/auth/google';
 
@@ -42,34 +32,7 @@ class Login extends React.Component {
         }
       })
       .catch(err => console.error('An error occurred', err));
-    // Launched from an external URL
-
-    // const urlData = await Linking.getInitialURL();
-    // if (urlData) {
-    //   console.log('url: ' + urlData);
-    //   // this.handleOpenURL({ url });
-    // } else console.log('no response');
   };
-
-  // openURL = url => {
-  //   // Open URL in a browser - Use SafariView on iOS
-  //   if (Platform.OS === 'ios') {
-  //     SafariView.show({
-  //       url: url,
-  //       fromBottom: true,
-  //     });
-  //   }
-  //   // Or Linking.openURL on Android
-  //   else {
-  //     Linking.openURL(url);
-  //   }
-  // };
-  // render() {
-  //   // const { user } = this.props.auth;
-  //   console.log(
-  //     'props fromo LOGIN PAGE ' + this.props.auth.isAuthenticated,
-  //   );
-
   render() {
     const { user } = this.props.auth;
     console.log('from LOGIN-PAGE ' + this.props.auth.isAuthenticated);
@@ -90,13 +53,6 @@ class Login extends React.Component {
           >
             <Text style={styles.btnText}>Log in with Gmail</Text>
           </TouchableOpacity>
-          {/* <TouchableOpacity style={styles.btnGuess} onPress={this._signInAsync}>
-            <Text style={styles.btnText}>Log in as a Guess</Text>
-          </TouchableOpacity>    
-          
-          <Text style={styles.rocketDevs}>
-            Powered by RocketDevs.com{' '}
-          </Text> */}
         </View>
       </ImageBackground>
     );

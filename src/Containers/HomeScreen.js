@@ -1,18 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { loginEmail, registerGoogle } from '../Redux/actions/actions';
-// import { bindActionCreators } from 'redux';
-
-import {
-  Image,
-  AsyncStorage,
-  Linking,
-  StyleSheet,
-  Platform,
-  Text,
-  View,
-} from 'react-native';
-import { H1, Container, Content, Icon as Icon2 } from 'native-base';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { Container, Icon as Icon2 } from 'native-base';
 import HeaderNav from './HeaderNav';
 import Colors from '../assets/Colors';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -20,20 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    // this._bootstrapAsync();
   }
-
-  // Fetch the token from storage then navigate to our appropriate place
-  // _bootstrapAsync = async () => {
-  //   const userToken = await AsyncStorage.getItem('jwtToken');
-  //   console.log(' home here' + userToken);
-  // };
-  //componentDidMount() {
-  //   this.props.navigation.navigate(
-  //     this.props.auth.isAuthenticated ? 'App' : 'AuthLoading',
-  //   );
-  // }
-
   static navigationOptions = {
     drawerLabel: () => (
       <Text
@@ -157,10 +133,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-// const mapDispatchToProps = dispatch => {
-//   return bindActionCreators({ loginEmail, registerGoogle }, dispatch);
-// };
 
 const mapStateToProps = state => ({
   auth: state.auth,

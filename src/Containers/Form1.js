@@ -13,16 +13,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import t from 'tcomb-form-native'; // 0.6.9
 import { sendForm1 } from '../tools/sendForms';
 const _ = require('lodash');
-/*  
+/* 
+ONLINE HELP :
 https://github.com/gcanti/tcomb-form-native#api
 https://github.com/gcanti/tcomb-form-native/blob/master/lib/stylesheets/bootstrap.js
-https://github.com/gcanti/tcomb-form-native/blob/master/docs/STYLESHEETS.md
-
-// t.form.Form.i18n = {
-//   optional: "",
-//   required: " (required)" // inverting the behaviour: adding a postfix to the required fields
-// };
-
+https://github.com/gcanti/tcomb-form-native/blob/master/docs/STYLESHEETS.md=
 */
 const Form = t.form.Form;
 

@@ -1,13 +1,5 @@
 import React from 'react';
-// import {
-//   AsyncStorage,
-//   StyleSheet,
-//   Text,
-//   SafeAreaView,
-//   StatusBar,
-//   Platform
-// } from "react-native";
-import {H1, Container, Content} from 'native-base';
+import { H1, Container, Content } from 'native-base';
 import HeaderNav from './HeaderNav';
 
 export default class Signup extends React.Component {
