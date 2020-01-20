@@ -1,4 +1,4 @@
-import keyMirror from "keymirror"; //to return same string
+import keyMirror from 'keymirror'; //to return same string
 
 const ActionTypes = keyMirror({
   GET_ERRORS: null,

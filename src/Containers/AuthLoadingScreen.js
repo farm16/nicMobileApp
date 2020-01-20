@@ -2,13 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { loginEmail, registerGoogle } from '../Redux/actions/actions';
 import { bindActionCreators } from 'redux';
-import {
-  ActivityIndicator,
-  StatusBar,
-  StyleSheet,
-  View,
-  Linking,
-} from 'react-native';
+import { ActivityIndicator, StatusBar, StyleSheet, View, Linking } from 'react-native';
 
 class AuthLoadingScreen extends React.Component {
   constructor(props) {
@@ -53,9 +47,7 @@ class AuthLoadingScreen extends React.Component {
 
   // Render any loading content that you like here
   render() {
-    console.log(
-      'from AUTHLOADING ' + this.props.auth.isAuthenticated,
-    );
+    console.log('from AUTHLOADING ' + this.props.auth.isAuthenticated);
 
     return (
       <View style={styles.container}>
@@ -70,18 +62,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ loginEmail, registerGoogle }, dispatch);
 };
 const mapStateToProps = state => ({
   auth: state.auth,
-  error: state.error,
+  error: state.error
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(AuthLoadingScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthLoadingScreen);

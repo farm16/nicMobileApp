@@ -4,7 +4,7 @@ module.exports = {
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         repsName: clientData.repsName,
@@ -16,12 +16,12 @@ module.exports = {
         clientPhone: clientData.phone,
         clientMedicare: clientData.medicare,
         clientHomecare: clientData.homecare,
-        clientTransportation: clientData.transportation,
-      }),
+        clientTransportation: clientData.transportation
+      })
     })
       .then(response => console.log(response))
       .catch(error => {
         console.error(error);
       });
-  },
+  }
 };

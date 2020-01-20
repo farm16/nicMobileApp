@@ -1,15 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  ScrollView,
-} from 'react-native';
-import {
-  createDrawerNavigator,
-  DrawerItems,
-} from 'react-navigation-drawer';
+import { SafeAreaView, StyleSheet, View, ScrollView } from 'react-native';
+import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 
 import HomeScreen from './HomeScreen';
 import Form1 from './Form1';
@@ -23,29 +15,21 @@ const CustomDrawerComponent = props => {
       style={{
         backgroundColor: `${Colors.mainRed}`,
         flex: 1,
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-evenly'
       }}
     >
       <View
         style={{
           padding: 15,
           height: 150,
-          flex: 1,
+          flex: 1
         }}
       >
         <Text style={styles.titleText}>{'north'.toUpperCase()} </Text>
-        <Text style={styles.titleText}>
-          {'insurance'.toUpperCase()}
-        </Text>
-        <Text style={styles.titleText}>
-          {'consulting'.toUpperCase()}
-        </Text>
+        <Text style={styles.titleText}>{'insurance'.toUpperCase()}</Text>
+        <Text style={styles.titleText}>{'consulting'.toUpperCase()}</Text>
         <Text style={styles.greetingText}>
-          {`Welcome,\n${
-            props.auth.isAuthenticated
-              ? props.auth.user.name.split(' ')[0]
-              : null
-          }`}{' '}
+          {`Welcome,\n${props.auth.isAuthenticated ? props.auth.user.name.split(' ')[0] : null}`}{' '}
         </Text>
       </View>
       <ScrollView>
@@ -57,22 +41,22 @@ const CustomDrawerComponent = props => {
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  error: state.error,
+  error: state.error
 });
 const Drawer = connect(mapStateToProps)(CustomDrawerComponent);
 
 export default AppDrawerNavigator = createDrawerNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: HomeScreen
     },
     Form1: Form1,
-    Logout: Logout,
+    Logout: Logout
   },
   {
     contentComponent: Drawer,
-    hideStatusBar: true,
-  },
+    hideStatusBar: true
+  }
 );
 
 const styles = StyleSheet.create({
@@ -85,65 +69,65 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
-    elevation: 5,
+    elevation: 5
   },
   btnText: {
     fontSize: 20,
     fontWeight: '400',
     color: '#fff',
-    marginHorizontal: 20,
+    marginHorizontal: 20
   },
   titleText: {
     fontWeight: '400',
     fontSize: 30,
-    color: `${Colors.drawerWhite}`,
+    color: `${Colors.drawerWhite}`
   },
   greetingText: {
     fontWeight: '400',
     fontSize: 20,
     color: `${Colors.drawerWhite}`,
     textTransform: 'capitalize',
-    marginVertical: 15,
+    marginVertical: 15
   },
   content: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   avatar: {
     alignItems: 'center',
-    margin: 20,
+    margin: 20
   },
   avatarImage: {
     borderRadius: 50,
     height: 100,
-    width: 100,
+    width: 100
   },
   header: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-    marginVertical: 20,
+    marginVertical: 20
   },
   text: {
     textAlign: 'center',
     color: '#333',
-    marginBottom: 5,
+    marginBottom: 5
   },
   buttons: {
     justifyContent: 'space-between',
     flexDirection: 'row',
     margin: 20,
-    marginBottom: 30,
+    marginBottom: 30
   },
   h1: {
-    marginVertical: 20,
+    marginVertical: 20
   },
   container: {
     justifyContent: 'center',
     padding: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#ffffff'
   },
   btnSubmit: {
     backgroundColor: Colors.mainRed,
@@ -153,12 +137,12 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
-    elevation: 5,
+    elevation: 5
   },
   btnText: {
     fontSize: 17,
     fontWeight: '400',
     color: '#fff',
-    textAlign: 'center',
-  },
+    textAlign: 'center'
+  }
 });

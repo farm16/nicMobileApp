@@ -13,22 +13,16 @@ class Logout extends React.Component {
     super(props);
   }
   static navigationOptions = {
-    drawerLabel: () => (
-      <Text
-        style={{ color: '#fff', fontSize: 20, marginVertical: 20 }}
-      >
-        Log Out
-      </Text>
-    ),
+    drawerLabel: () => <Text style={{ color: '#fff', fontSize: 20, marginVertical: 20 }}>Log Out</Text>,
     drawerIcon: () => (
       <Icon
         style={{
           color: 'white',
-          fontSize: 25,
+          fontSize: 25
         }}
         name="arrow-circle-left"
       />
-    ),
+    )
   };
 
   logoutNow = () => {
@@ -42,13 +36,8 @@ class Logout extends React.Component {
       <Container>
         <HeaderNav open={open} navTitle={'Home'} />
         <View style={styles.content}>
-          <Text style={styles.header}>
-            Are you sure you wan to log out?
-          </Text>
-          <TouchableOpacity
-            style={styles.btn}
-            onPress={this.logoutNow}
-          >
+          <Text style={styles.header}>Are you sure you wan to log out?</Text>
+          <TouchableOpacity style={styles.btn} onPress={this.logoutNow}>
             <Text style={styles.btnText}>Yes</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -74,47 +63,47 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
-    elevation: 5,
+    elevation: 5
   },
   btnText: {
     fontSize: 20,
     fontWeight: '400',
     color: '#fff',
-    marginHorizontal: 20,
+    marginHorizontal: 20
   },
   content: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   header: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-    marginVertical: 20,
+    marginVertical: 20
   },
   text: {
     textAlign: 'center',
     color: '#333',
-    marginBottom: 5,
+    marginBottom: 5
   },
   buttons: {
     justifyContent: 'space-between',
     flexDirection: 'row',
     margin: 20,
-    marginBottom: 30,
+    marginBottom: 30
   },
   btnText: {
     fontSize: 17,
     fontWeight: '400',
     color: '#fff',
-    textAlign: 'center',
-  },
+    textAlign: 'center'
+  }
 });
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  error: state.error,
+  error: state.error
 });
 export default connect(mapStateToProps, { logoutUser })(Logout);

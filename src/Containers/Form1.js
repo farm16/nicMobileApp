@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { H1, Container, Content } from 'native-base';
 import HeaderNav from './HeaderNav';
 import Colors from '../assets/Colors';
@@ -28,7 +23,7 @@ const User = t.struct({
   phone: t.Number,
   medicare: t.Boolean,
   homecare: t.Boolean,
-  transportation: t.Boolean,
+  transportation: t.Boolean
 });
 
 const stylesheet = _.cloneDeep(t.form.Form.stylesheet);
@@ -52,48 +47,42 @@ class Form1 extends Component {
         fields: {
           email: {
             // you can use strings or JSX
-            error: 'Insert a valid email',
+            error: 'Insert a valid email'
           },
           firstName: {
             error: 'Required field!',
-            placeholder: 'Required',
+            placeholder: 'Required'
           },
           lastName: {
             error: 'Required field!',
-            placeholder: 'Required',
+            placeholder: 'Required'
           },
           medicaid: {
             error: 'Required field!',
-            placeholder: 'Required',
+            placeholder: 'Required'
           },
           phone: {
             error: 'Required field!',
-            placeholder: 'Required',
+            placeholder: 'Required'
           },
           medicare: { placeholder: 'Optional' },
           homecare: { placeholder: 'Optional' },
-          transportation: { placeholder: 'Optional' },
-        },
-      },
+          transportation: { placeholder: 'Optional' }
+        }
+      }
     };
   }
   static navigationOptions = {
-    drawerLabel: () => (
-      <Text
-        style={{ color: '#fff', fontSize: 20, marginVertical: 20 }}
-      >
-        Forms
-      </Text>
-    ),
+    drawerLabel: () => <Text style={{ color: '#fff', fontSize: 20, marginVertical: 20 }}>Forms</Text>,
     drawerIcon: () => (
       <Icon
         style={{
           color: 'white',
-          fontSize: 25,
+          fontSize: 25
         }}
         name="file-text-o"
       />
-    ),
+    )
   };
   handleSubmit = () => {
     const clientInfo = this._form.getValue(); // use that ref to get the form value
@@ -104,7 +93,7 @@ class Form1 extends Component {
       ...clientInfo,
       phone: phone,
       repsName: repsName,
-      repsEmail: repsEmail,
+      repsEmail: repsEmail
     };
     console.log('clientInfo: ', clientData);
     sendForm1(clientData);
@@ -126,7 +115,7 @@ class Form1 extends Component {
                 style={{
                   marginTop: 50,
                   textAlign: 'center',
-                  fontSize: 50,
+                  fontSize: 50
                 }}
               >
                 Form Sent !
@@ -136,34 +125,21 @@ class Form1 extends Component {
                 style={{
                   color: 'green',
                   fontSize: 100,
-                  textAlign: 'center',
+                  textAlign: 'center'
                 }}
                 name="check-circle"
               />
 
-              <H1 style={{ ...styles.h1, textAlign: 'center' }}>
-                Do you want to send another Form ?
-              </H1>
-              <TouchableOpacity
-                style={styles.btnSubmit}
-                onPress={this.handleSubmitAgain}
-              >
+              <H1 style={{ ...styles.h1, textAlign: 'center' }}>Do you want to send another Form ?</H1>
+              <TouchableOpacity style={styles.btnSubmit} onPress={this.handleSubmitAgain}>
                 <Text style={styles.btnText}>Yes</Text>
               </TouchableOpacity>
             </View>
           ) : (
             <View style={styles.container}>
               <H1 style={styles.h1}>Please complete the form.</H1>
-              <Form
-                ref={c => (this._form = c)}
-                type={User}
-                value={this.state.value}
-                options={this.state.options}
-              />
-              <TouchableOpacity
-                style={styles.btnSubmit}
-                onPress={this.handleSubmit}
-              >
+              <Form ref={c => (this._form = c)} type={User} value={this.state.value} options={this.state.options} />
+              <TouchableOpacity style={styles.btnSubmit} onPress={this.handleSubmit}>
                 <Text style={styles.btnText}>Submit</Text>
               </TouchableOpacity>
             </View>
@@ -176,13 +152,13 @@ class Form1 extends Component {
 
 const styles = StyleSheet.create({
   h1: {
-    marginVertical: 20,
+    marginVertical: 20
   },
   container: {
     flex: 1,
     justifyContent: 'space-evenly',
     padding: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#ffffff'
   },
   btnSubmit: {
     backgroundColor: Colors.mainRed,
@@ -192,19 +168,19 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
-    elevation: 5,
+    elevation: 5
   },
   btnText: {
     fontSize: 17,
     fontWeight: '400',
     color: '#fff',
-    textAlign: 'center',
-  },
+    textAlign: 'center'
+  }
 });
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  error: state.error,
+  error: state.error
 });
 
 export default connect(mapStateToProps)(Form1);

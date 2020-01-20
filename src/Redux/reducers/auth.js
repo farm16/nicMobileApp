@@ -1,6 +1,6 @@
-import ActionType from "../actions/ActionTypes";
+import ActionType from '../actions/ActionTypes';
 
-const { isEmpty } = require("lodash");
+const { isEmpty } = require('lodash');
 
 const initialState = {
   isAuthenticated: false,
@@ -8,7 +8,7 @@ const initialState = {
   loading: false
 };
 
-export default function (state = initialState, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case ActionType.SET_CURRENT_USER:
       return {
@@ -21,7 +21,7 @@ export default function (state = initialState, action) {
         ...state,
         isAuthenticated: false,
         user: action.payload
-      }
+      };
     case ActionType.USER_LOADING:
       return {
         ...state,

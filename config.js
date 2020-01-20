@@ -1,9 +1,5 @@
-import {Platform} from "react-native";
-import {
-  API_URL,
-  IOS_ANALYTICS_KEY,
-  ANDROID_ANALYTICS_KEY
-} from "react-native-dotenv";
+import { Platform } from 'react-native';
+import { API_URL, IOS_ANALYTICS_KEY, ANDROID_ANALYTICS_KEY } from 'react-native-dotenv';
 
 export default {
   API_URL,

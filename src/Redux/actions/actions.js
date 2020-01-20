@@ -15,7 +15,7 @@ export const sendForm = data => dispatch => {
       console.log(err);
       dispatch({
         type: ActionTypes.GET_ERRORS,
-        payload: err.response.data,
+        payload: err.response.data
       });
     });
 };
@@ -28,7 +28,7 @@ export const loginEmail = response => dispatch => {
 export const setCurrentUser = decoded => {
   return {
     type: ActionTypes.SET_CURRENT_USER,
-    payload: decoded,
+    payload: decoded
   };
 };
 
@@ -37,6 +37,6 @@ export const logoutUser = () => dispatch => {
   console.log('from logout ACTION');
   dispatch({
     type: ActionTypes.SET_CURRENT_USER,
-    payload: {},
+    payload: {}
   });
 };

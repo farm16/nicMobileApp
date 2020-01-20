@@ -4,7 +4,7 @@ import HeaderNav from './HeaderNav';
 
 export default class Signup extends React.Component {
   static navigationOptions = {
-    title: 'Signup',
+    title: 'Signup'
   };
   render() {
     const open = () => this.props.navigation.openDrawer();
