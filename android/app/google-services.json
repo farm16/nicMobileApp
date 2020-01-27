@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1070120255432",
+    "firebase_url": "https://chris-col.firebaseio.com",
+    "project_id": "chris-col",
+    "storage_bucket": "chris-col.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070120255432:android:b38a28a964a592f7d68afd",
+        "android_client_info": {
+          "package_name": "com.nicmobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070120255432-kbonfu6gbt282e9i7bl4la7hlgbcjts7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nicmobileapp",
+            "certificate_hash": "89c40167dc7314d4ce6d6e9fc7958c775f17e6b8"
+          }
+        },
+        {
+          "client_id": "1070120255432-blu19h01k3b1e28v5ble6cpi5bgr313h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM6141OEkEVfouweiC4TkE2eNsgIZbuZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070120255432-blu19h01k3b1e28v5ble6cpi5bgr313h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
