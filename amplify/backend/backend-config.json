@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"nicmobileapp0dcee38f": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
