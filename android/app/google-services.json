@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "511635137335",
+    "firebase_url": "https://nicmobileapp.firebaseio.com",
+    "project_id": "nicmobileapp",
+    "storage_bucket": "nicmobileapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511635137335:android:019df16da3aabf33cd70b2",
+        "android_client_info": {
+          "package_name": "com.nicmobileapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511635137335-udfadkiua2heot5bl4fnovvof0e6adh4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nicmobileapp",
+            "certificate_hash": "b0182e8e2c59e1575798cc7f290e8483528df354"
+          }
+        },
+        {
+          "client_id": "511635137335-njf9rsfqs2qvat1ocp7njesfhj5qt69t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhd9W_P1NLv0vU767dZaONJbcHY4Of1BI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511635137335-njf9rsfqs2qvat1ocp7njesfhj5qt69t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
